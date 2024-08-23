@@ -5,6 +5,8 @@ import AddRecipeForm from './components/AddRecipeForm'
 import useRecipeStore from './components/recipeStore';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 function App() {
   const recipes = useRecipeStore(state => state.recipes);
@@ -19,6 +21,8 @@ function App() {
               <SearchBar />
               <RecipeList />
               <AddRecipeForm />
+              <FavoritesList />
+              <RecommendationsList />
             </>
           }
         />
