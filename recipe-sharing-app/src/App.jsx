@@ -4,6 +4,7 @@ import RecipeList from './components/RecipeList'
 import AddRecipeForm from './components/AddRecipeForm'
 import useRecipeStore from './components/recipeStore';
 import RecipeDetails from './components/RecipeDetails';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const recipes = useRecipeStore(state => state.recipes);
@@ -15,6 +16,7 @@ function App() {
           path='/'
           element={
             <>
+              <SearchBar />
               <RecipeList />
               <AddRecipeForm />
             </>
