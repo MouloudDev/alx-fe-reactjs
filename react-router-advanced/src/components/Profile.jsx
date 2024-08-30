@@ -1,7 +1,6 @@
 import { Route, Routes, Link, useResolvedPath, Navigate } from 'react-router-dom';
 import ProfileDetails from './ProfileDetails';
 import ProfileSettings from './ProfileSettings';
-import BlogPost from './BlogPost';
 
 function Profile({isAuthenticated}) {
     const resolvedPath = useResolvedPath("");
@@ -36,7 +35,6 @@ function Profile({isAuthenticated}) {
             <Routes>
                 <Route path="/details" element={<ProfileDetails />} />
                 <Route path="/settings" element={<ProfileSettings />} />
-                <Route path='/bolg/:id' element={<BlogPost />} />
             </Routes>
         </div>
     );
