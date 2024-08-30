@@ -2,7 +2,7 @@ import { Route, Routes, Link, useResolvedPath, Navigate } from 'react-router-dom
 import ProfileDetails from './ProfileDetails';
 import ProfileSettings from './ProfileSettings';
 
-function Profile({isAuthenticated}) {
+function Profile() {
     const resolvedPath = useResolvedPath("");
     const url = resolvedPath.pathname;
 
@@ -10,8 +10,6 @@ function Profile({isAuthenticated}) {
         {id: '1234', title: "Blog post 1"},
         {id: '5678', title: "Blog post 2"}
     ]
-
-    if (!isAuthenticated) return <Navigate to={"/login"} replace />;
 
     return (
         <div>
@@ -25,7 +23,7 @@ function Profile({isAuthenticated}) {
                 </li>
                 {blogPosts.map(({ id, title }) => {
                     return (
-                        <li>
+                        <li key={id}>
                             <Link to={`${url}/bolgposts/${id}`}>{title}</Link>
                         </li>
                     )

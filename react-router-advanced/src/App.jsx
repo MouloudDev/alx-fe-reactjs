@@ -3,9 +3,9 @@ import Profile from './components/Profile';
 import BlogPost from './components/BlogPost';
 import Login from './components/Login';
 import './App.css'
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
-  const isAuthenticated = localStorage.getItem('authToken') !== null;
 
   return (
     <Router>
@@ -13,7 +13,7 @@ function App() {
         <Link to="/profile">Profile</Link>
       </nav>
       <Routes>
-        <Route path="/profile/*" element={<Profile isAuthenticated={isAuthenticated}/>} />
+        <Route path='/profile/*' element={<ProtectedRoute component={<Profile />} />} />
         <Route path='/blog/:id' element={<BlogPost />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<h2>Home</h2>} />
