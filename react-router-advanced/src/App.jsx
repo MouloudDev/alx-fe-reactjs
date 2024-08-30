@@ -14,7 +14,7 @@ function App() {
       </nav>
       <Routes>
         <Route path="/profile/*" element={<Profile isAuthenticated={isAuthenticated}/>} />
-        <Route path='/bolg/:id' element={<BlogPost />} />
+        <Route path='/blog/:id' element={<BlogPost />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<h2>Home</h2>} />
       </Routes>
