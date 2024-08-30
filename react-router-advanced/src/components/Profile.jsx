@@ -36,7 +36,7 @@ function Profile({isAuthenticated}) {
             <Routes>
                 <Route path="/details" element={<ProfileDetails />} />
                 <Route path="/settings" element={<ProfileSettings />} />
-                <Route path='/bolgposts/:blogPostId' element={<BlogPost />} />
+                <Route path='/bolg/:id' element={<BlogPost />} />
             </Routes>
         </div>
     );

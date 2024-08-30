@@ -5,7 +5,7 @@ const blogPosts = [
 ]
 
 function BlogPost() {
-    const { blogPostId } = useParams();
+    const { id: blogPostId } = useParams();
     const {title} = blogPosts.find(({id}) => id === blogPostId);
 
     return (
