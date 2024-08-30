@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function RegistrationForm() {
-    const [{name, email, password}, setFormData] = useState({ name: '', email: '', password: '' });
+    const [{username, email, password}, setFormData] = useState({ username: '', email: '', password: '' });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -10,9 +10,9 @@ function RegistrationForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({name, email, password});
+        console.log({username, email, password});
 
-        if (!name.length || !email.length || !password.length) {
+        if (!username.length || !email.length || !password.length) {
             alert("All fields are required!")
             return;
         }
@@ -22,8 +22,8 @@ function RegistrationForm() {
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
-                name="name"
-                value={name}
+                name="username"
+                value={username}
                 onChange={handleChange}
             />
             <input
