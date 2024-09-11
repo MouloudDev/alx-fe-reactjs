@@ -5,7 +5,7 @@ function RecipeCard({recipe}) {
 
     return (
         <div className="flex justify-start gap-2 shadow-lg rounded-lg p-3 w-fit h-fit">
-            <img src={image} alt="Recipe image" className="rounded-lg hover:scale-150"/>
+            <img src={image} alt="Recipe image" className="rounded-lg hover:scale-110"/>
             <div>
                 <h2>
                     {title}
