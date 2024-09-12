@@ -3,22 +3,22 @@ import React, { useState } from 'react';
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [instructions, setInstructions] = useState('');
+  const [steps, setsteps] = useState('');
 
   const [errors, setErrors] = useState({
     title: '',
     ingredients: '',
-    instructions: '',
+    steps: '',
   });
 
   const restFields = () => {
     setTitle('');
     setIngredients('');
-    setInstructions('');
+    setsteps('');
     setErrors({
       title: '',
       ingredients: '',
-      instructions: '',
+      steps: '',
     });
   }
 
@@ -29,7 +29,7 @@ function AddRecipeForm() {
     const newErrors = {
       title: '',
       ingredients: '',
-      instructions: '',
+      steps: '',
     };
 
     if (title.trim() === '') {
@@ -42,8 +42,8 @@ function AddRecipeForm() {
       isValid = false;
     }
 
-    if (instructions.trim() === '') {
-      newErrors.instructions = 'Instructions are required.';
+    if (steps.trim() === '') {
+      newErrors.steps = 'steps are required.';
       isValid = false;
     }
 
@@ -52,7 +52,7 @@ function AddRecipeForm() {
       return;
     }
 
-    console.log('Form data:', { title, ingredients, instructions });
+    console.log('Form data:', { title, ingredients, steps });
 
     restFields();
   };
@@ -86,15 +86,15 @@ function AddRecipeForm() {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="instructions" className="block text-sm font-medium text-gray-700">Instructions</label>
+          <label htmlFor="steps" className="block text-sm font-medium text-gray-700">Steps</label>
           <textarea
-            id="instructions"
+            id="steps"
             rows="6"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            value={steps}
+            onChange={(e) => setsteps(e.target.value)}
             className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           />
-          {errors.instructions && <p className="mt-1 text-sm text-red-600">{errors.instructions}</p>}
+          {errors.steps && <p className="mt-1 text-sm text-red-600">{errors.steps}</p>}
         </div>
 
         <button
