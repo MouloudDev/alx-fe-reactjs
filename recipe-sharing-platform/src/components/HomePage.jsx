@@ -14,6 +14,7 @@ function HomePage() {
 
     return (
         <div>
+            <Link to={`/recipe/new`} >Add New Recipe</Link>
             <div className="flex gap-4 flex-wrap p-4 border-2 rounded-lg">
               {data.map(({id, title}) => <Link to={`/recipe/${id}`} >{title}</Link>)}
             </div>
