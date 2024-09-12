@@ -22,9 +22,7 @@ function AddRecipeForm() {
     });
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const validate = () => {
     let isValid = true;
     const newErrors = {
       title: '',
@@ -46,6 +44,14 @@ function AddRecipeForm() {
       newErrors.steps = 'steps are required.';
       isValid = false;
     }
+
+    return {isValid, newErrors};
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const {isValid, newErrors} = validate();
 
     if (!isValid) {
       setErrors(newErrors);
