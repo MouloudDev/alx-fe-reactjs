@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import RemoveFromFavoritesButton from "./RemoveFromFavoritesButton";
 
 const RecipeList = () => {
-    const filteredRecipes = useRecipeStore(state => state.filteredRecipes);
+    const recipes = useRecipeStore(state => state.filteredRecipes);
 
     return (
         <div>
-            {filteredRecipes.map(recipe => {
+            {recipes.map(recipe => {
                 const {id, title, description} = recipe;
                 return (
                     <div key={id}>
