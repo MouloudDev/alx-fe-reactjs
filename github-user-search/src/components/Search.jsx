@@ -68,7 +68,10 @@ function Search() {
                 }
             </ul>
             <div className="mt-6">
-              {loading ? <p>Loading...</p> : searchResults.map(user => <UserCard data={user} />)}
+              {loading ?
+                <p>Loading...</p> :
+                searchResults.map(user => <UserCard key={user.id} data={user} />)
+            }
             </div>
         </div>
     )
