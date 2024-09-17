@@ -11,7 +11,6 @@ function Search() {
     const rest = () => {
         setUsername('');
         setErros([]);
-        setLoading(false);
     }
 
     const handleSumbit = async (e) => {
@@ -26,13 +25,13 @@ function Search() {
 
         try {
             setLoading(true)
-            await new Promise(res => setTimeout(res, 3000))
             const data = await fetchUserData(username);
             setSearchResluts(prev => [...prev, data]);
             rest()
         } catch(error) {
-            setErros(prev => [...prev, error.message])
+            setErros(prev => [...prev, "Looks like we cant find the user"])
         }
+        setLoading(false);
     }
 
     const clearSearchResults = () => setSearchResluts([]);
@@ -69,7 +68,7 @@ function Search() {
             <div className="mt-6">
               {loading ?
                 <p>Loading...</p> :
-                searchResults.map(user => <UserCard key={user.id} data={user} />)
+                searchResults.map((user, i) => <UserCard key={i} data={user} />)
             }
             </div>
         </div>
@@ -79,6 +78,9 @@ function Search() {
 export default Search;
 
 function UserCard({ data }) {
+
+    if (!data) return null;
+
     return (
         <div className="bg-white shadow-lg rounded-lg overflow-hidden w-80 mx-auto my-4">
             <div className="flex items-center p-4">

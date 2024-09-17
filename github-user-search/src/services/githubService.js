@@ -10,6 +10,6 @@ export async function fetchUserData(username) {
         return response.data
     } catch(error) {
        console.error(error)
-       throw new Error("Looks like we cant find the user")
+       throw error
     }
 }
