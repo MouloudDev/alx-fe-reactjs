@@ -32,7 +32,7 @@ function Search() {
             setSearchResults(data.items);
             reset();
         } catch (error) {
-            setErrors(prev => [...prev, "Looks like we can't find the user"]);
+            setErrors(prev => [...prev, "Looks like we cant find the user"]);
         }
         setLoading(false);
     };
